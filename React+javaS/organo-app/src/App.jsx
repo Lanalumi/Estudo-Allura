@@ -2,7 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Banner from './componentes/Banner/Banner.jsx'
+import Banner from './componentes/Banner';
+import CampoTexto from './componentes/CampoTexto/CampoTexto.jsx'
 
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
   return (
   <div className= "App">
     <Banner/>
+    <CampoTexto label="Nome"/>
+    <CampoTexto label="Cargo"/>
+    <CampoTexto label="Imagem"/>
   </div>
   )
 }
