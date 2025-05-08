@@ -2,11 +2,14 @@ import './ListaSuspensa.css'
 
 const ListaSuspensa = (props) => {
     console.log(props.itens)
+
     return (
-        <div>
+        <div className="lista-suspensa">
             <label>{props.label}</label>
-            <select>
-                <option> oi oi oi banana </option>
+            <select required={props.required}>
+                {props.itens.map(item => {
+                    return <option key={item}>{item}</option>
+                    })}     {/*renderização lista simples */}
             </select>
         </div>
     )
