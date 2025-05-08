@@ -6,7 +6,7 @@ const ListaSuspensa = (props) => {
         <div>
             <label>{props.label}</label>
             <select>
-                <option> ???</option>
+                <span>akdljkljsdfskjdasldj</span>
             </select>
         </div>
     )
