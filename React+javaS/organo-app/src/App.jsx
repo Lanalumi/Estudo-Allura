@@ -6,14 +6,21 @@ import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
 
 function App() {
+
+  const [colaboradores, setColaboradores] = useState([])
+  
+  const aoNovoColaboradorAdicionado = (colaborador) => {
+    console.log(colaborador)
+    setColaboradores([...colaboradores, colaborador])
+  }
   // const [count, setCount] = useState(0)
 
   return (
   <div className= "App">
     <Banner/>
-    <Formulario />
+    <Formulario aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)} />
   </div>
-  )
+  );
 }
 
 export default App

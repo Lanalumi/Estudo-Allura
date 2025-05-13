@@ -2,9 +2,9 @@ import Botao from '../Botao'
 import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
 import './Formulario.css'
+import { useState } from 'react'
 
-
-const Formulario = () => {
+const Formulario = (props) => {
 
     const times =[
         'Programação',
@@ -16,13 +16,20 @@ const Formulario = () => {
         'Inovação e Gestão'
     ]
 
+
+
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
 
     const aoSalvar = (evento) =>{
         evento.preventDefault()  //não seguir comportamento padrão
-        console.log('Form foi submetido', nome, cargo, Imagem)
+        props.aoColaboradorCadastrado({
+            nome,
+            cargo,
+            imagem,
+            times
+        })
     }
 
     return (
