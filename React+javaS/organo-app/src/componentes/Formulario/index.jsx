@@ -6,21 +6,12 @@ import { useState } from 'react'
 
 const Formulario = (props) => {
 
-    const times =[
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'Devops',
-        'UX e Desing',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
 
-
-
+    
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
+    const [time, setTime] = useState('')
 
     const aoSalvar = (evento) =>{
         evento.preventDefault()  //não seguir comportamento padrão
@@ -28,8 +19,11 @@ const Formulario = (props) => {
             nome,
             cargo,
             imagem,
-            times
+            time
         })
+        setNome('')
+        setCargo('')
+        setTime('')
     }
 
     return (
@@ -57,7 +51,13 @@ const Formulario = (props) => {
                     valor={imagem}
                     aoAlterado={valor => setImagem(valor)}
                     />
-                <ListaSuspensa obrigatorio={true} label="Time" itens={times}/>
+                <ListaSuspensa 
+                    obrigatorio={true}
+                     label="Time" 
+                     itens={props.times}
+                     valor={time}
+                     aoAlterado={valor => setTime(valor)}
+                     />
                 <Botao>
                     Criar card 
                 </Botao>
