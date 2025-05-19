@@ -24,6 +24,7 @@ const Formulario = (props) => {
         setNome('')
         setCargo('')
         setTime('')
+        
     }
 
     return (

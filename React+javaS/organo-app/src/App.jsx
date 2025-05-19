@@ -5,6 +5,7 @@ import './App.css'
 import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
 import Time from './componentes/Time/time';
+import Rodape from './componentes/Rodape/rodape';
 
 function App() {
 
@@ -49,17 +50,17 @@ function App() {
   
   const [colaboradores, setColaboradores] = useState([])
   
-  const aoNovoColaboradorAdicionado = (colaborador) => {
-    console.log(colaborador)
-    setColaboradores([...colaboradores, colaborador])
+  const aoNovoColaboradorAdicionado = (colaboradores) => {
+    setColaboradores([...colaboradores, colaboradores])
   }
   // const [count, setCount] = useState(0)
   
   return (
     <div className= "App">
     <Banner/>
-    <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)} />
-    
+    <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaboradores => aoNovoColaboradorAdicionado(colaboradores)} />
+
+
     {times.map(time => <Time 
     key={time.nome} 
     nome ={time.nome}
@@ -67,7 +68,7 @@ function App() {
     corSecundaria={time.corSecundaria}
     colaboradores={colaboradores}
     />)}
-
+  
   </div>
   );
 }

@@ -5,10 +5,11 @@ const Time = (props) => {
     const css = {backgroundColor: props.corSecundaria}
 
     return (
-        <section className="time" style={css}>
+        //renderização condicional
+        props.colaboradores.length > 0 && <section className="time" style={css}>
             <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
             <div className="colaboradores">
-                {props.colaboradores.map( colaborador => <Colaborador nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem}/>)}
+                {props.colaboradores.map( colaboradores => <Colaborador key={colaboradores.nome} nome={colaboradores.nome} cargo={colaboradores.cargo} imagem={colaboradores.imagem}/>)}
             </div>
         </section>
     )
